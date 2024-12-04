@@ -3,18 +3,28 @@ from urllib.parse import quote, urlencode
 
 # Configuração inicial do app
 st.set_page_config(page_title="Gerador de Links WhatsApp", layout="centered")
+st.sidebar.header(("Mkt Hub :peach:"))
+hub_firenze = st.sidebar.selectbox('', ['Link WhatsApp', 'Gerador de UTM',], 0)
 
-hub_firenze = st.sidebar.selectbox(
-    'Mkt Hub :100:', ['Link WhatsApp', 'Gerador de UTM',], 0)
+
+st.sidebar.header(("Sobre o autor :copyright:"))
+st.sidebar.markdown((
+    """
+Desenvolvi esse hub de ferramentas com a ideia de tornar acessível e sem anúncios! 
+- [Instagram](https://www.instagram.com/owemersonsilva_/) By Wemerson Silva
+- [Linkedin](https://www.linkedin.com/in/wemerson-silva-5098071a9/) By Wemerson Silva
+- [Site](https://www.eudine.com.br/) By Eudine Brasil
+"""
+))
 
 if hub_firenze == 'Link WhatsApp':
 
     # Título do app
-    st.title("Zap Links - Gerador de Links do WhatsApp :coffee:")
+    st.title("Zap Links - Gerador de Links do WhatsApp :calling:")
 
     # Seção de entrada de dados
     st.header("Crie seu link personalizado:")
-    phone_number = st.text_input("Número de telefone (formato internacional):", placeholder="Ex: 5511999999999")
+    phone_number = st.text_input("Número de telefone (Digite somente o código de área):", placeholder="Ex: 11999999999")
     message = st.text_area("Mensagem:", placeholder="Digite sua mensagem aqui...")
 
     # Botão para gerar o link
@@ -32,17 +42,12 @@ if hub_firenze == 'Link WhatsApp':
         st.success("Link gerado com sucesso!")
         st.code(link, language="text")
 
-        # Adicionar botão de copiar usando HTML
-        st.markdown(
-            f"""
-            <button onclick="navigator.clipboard.writeText('{link}')">Copiar link</button>
-            """,
-            unsafe_allow_html=True
-        )
+       
+    
 if hub_firenze == 'Gerador de UTM':
 
     # Título do aplicativo
-    st.title("UTM Tracker - Gerador de UTM :white_check_mark:")
+    st.title("UTM Tracker - Gerador de UTM :signal_strength:")
 
     # Formulário de entrada de dados
     with st.form("utm_form"):
@@ -50,11 +55,11 @@ if hub_firenze == 'Gerador de UTM':
 
         # Campos de entrada
         site_url = st.text_input("Link do site:", placeholder="https://www.seusite.com")
-        utm_source = st.text_input("utm_source:", placeholder="Ex: google")
-        utm_medium = st.text_input("utm_medium:", placeholder="Ex: cpc")
-        utm_campaign = st.text_input("utm_campaign:", placeholder="Ex: promocao-verao")
-        utm_term = st.text_input("utm_term (opcional):", placeholder="Ex: sapatos")
-        utm_content = st.text_input("utm_content (opcional):", placeholder="Ex: banner-1")
+        utm_source = st.text_input("UTM source:", placeholder="Ex: google")
+        utm_medium = st.text_input("UTM medium:", placeholder="Ex: cpc")
+        utm_campaign = st.text_input("UTM campaign:", placeholder="Ex: promocao-verao")
+        utm_term = st.text_input("UTM term (opcional):", placeholder="Ex: sapatos")
+        utm_content = st.text_input("UTM content (opcional):", placeholder="Ex: banner-1")
 
         # Botão de submissão
         submitted = st.form_submit_button("Gerar UTM")
@@ -82,10 +87,4 @@ if hub_firenze == 'Gerador de UTM':
             st.success("URL com UTM gerada com sucesso!")
             st.code(utm_url, language="text")
 
-            # Adicionar um botão de copiar com JavaScript
-            st.markdown(
-                f"""
-                <button onclick="navigator.clipboard.writeText('{utm_url}')">Copiar link</button>
-                """,
-                unsafe_allow_html=True
-            )
+        
