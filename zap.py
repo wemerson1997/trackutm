@@ -3,8 +3,8 @@ from urllib.parse import quote, urlencode
 
 # Configuração inicial do app
 st.set_page_config(page_title="Gerador de Links WhatsApp", layout="centered")
-st.sidebar.header(("Mkt Hub :peach:"))
-hub_firenze = st.sidebar.selectbox('', ['Link WhatsApp', 'Gerador de UTM',], 0)
+st.sidebar.header(("Marketing Hub :peach:"))
+hub_firenze = st.sidebar.selectbox('',['Link WhatsApp', 'Gerador de UTM',], 0)
 
 
 st.sidebar.header(("Sobre o autor :copyright:"))
