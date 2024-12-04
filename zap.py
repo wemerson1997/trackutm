@@ -13,7 +13,7 @@ st.sidebar.markdown((
 Desenvolvi esse hub de ferramentas com a ideia de tornar acessível e sem anúncios! 
 - [Instagram](https://www.instagram.com/owemersonsilva_/) By Wemerson Silva
 - [Linkedin](https://www.linkedin.com/in/wemerson-silva-5098071a9/) By Wemerson Silva
-- [Site](https://www.eudine.com.br/) By Eudine Brasil
+- [Site](https://www.eudine.com.br/?utm_source=streamlit&utm_medium=mkt-hub&utm_campaign=sidebar) By Eudine Brasil
 """
 ))
 
